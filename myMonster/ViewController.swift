@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 
+//to do: Fix monster images to consistent size
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var monsterImg: MonsterImg!
@@ -38,6 +40,8 @@ class ViewController: UIViewController {
         
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
+        foodImg.alpha = DIM_ALPHA
+        foodImg.userInteractionEnabled = false
         
         penalty1Img.alpha = DIM_ALPHA
         penalty2Img.alpha = DIM_ALPHA
@@ -90,6 +94,7 @@ class ViewController: UIViewController {
         if timer != nil {
             timer.invalidate()
         }
+        
         
         timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
     }

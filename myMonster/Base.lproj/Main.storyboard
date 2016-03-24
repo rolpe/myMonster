@@ -34,6 +34,13 @@
                                     <constraint firstAttribute="height" constant="92" id="vTe-wa-FXi"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="EsU-S6-ePZ" customClass="MonsterImg" customModule="myMonster" customModuleProvider="target">
+                                <rect key="frame" x="149" y="316" width="380" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="380" id="pRl-nC-Wsw"/>
+                                    <constraint firstAttribute="height" constant="220" id="sC4-RY-NZE"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pNe-cp-elR">
                                 <rect key="frame" x="205" y="41" width="182" height="50"/>
                                 <subviews>
@@ -63,13 +70,6 @@
                                     <rect key="frame" x="206" y="-59" width="182" height="50"/>
                                 </variation>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="EsU-S6-ePZ" customClass="MonsterImg" customModule="myMonster" customModuleProvider="target">
-                                <rect key="frame" x="100" y="194" width="530" height="348"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="530" id="Hbe-jS-Cjr"/>
-                                    <constraint firstAttribute="height" constant="348" id="U6a-nc-OY1"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="zxY-qh-jrX">
                                 <rect key="frame" x="155" y="120" width="290" height="98"/>
                                 <subviews>
@@ -101,6 +101,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EsU-S6-ePZ" secondAttribute="bottom" constant="58" id="0Ea-uU-Yy4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EsU-S6-ePZ" secondAttribute="bottom" constant="64" id="1Q0-B1-LzK"/>
+                            <constraint firstItem="EsU-S6-ePZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="39" id="BPt-K8-RlY"/>
                             <constraint firstAttribute="trailing" secondItem="jlh-at-wde" secondAttribute="trailing" id="BrJ-uF-ddS"/>
                             <constraint firstItem="zxY-qh-jrX" firstAttribute="top" secondItem="fYz-Zv-93v" secondAttribute="bottom" constant="15" id="D4f-oO-k5M"/>
                             <constraint firstItem="fYz-Zv-93v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Dcc-2N-Si5"/>
@@ -128,6 +130,8 @@
                                 <exclude reference="ZIC-Ds-gzN"/>
                                 <exclude reference="aD0-A6-1rt"/>
                                 <exclude reference="oqt-8Y-YlP"/>
+                                <exclude reference="dre-lI-FAV"/>
+                                <exclude reference="0Ea-uU-Yy4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
