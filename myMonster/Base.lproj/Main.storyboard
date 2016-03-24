@@ -33,6 +33,9 @@
                                     <constraint firstAttribute="width" constant="240" id="IWP-Qf-zcc"/>
                                     <constraint firstAttribute="height" constant="92" id="vTe-wa-FXi"/>
                                 </constraints>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="180" y="-124" width="240" height="137"/>
+                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="EsU-S6-ePZ" customClass="MonsterImg" customModule="myMonster" customModuleProvider="target">
                                 <rect key="frame" x="149" y="316" width="380" height="220"/>
@@ -97,10 +100,27 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88a-aM-z3T" userLabel="RestartBtn">
+                                <rect key="frame" x="226" y="241" width="148" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="KjH-D7-upY"/>
+                                    <constraint firstAttribute="width" constant="148" id="T2R-kO-cbB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="36"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRestartTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PfN-Va-bYP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EsU-S6-ePZ" secondAttribute="bottom" constant="58" id="0Ea-uU-Yy4"/>
+                            <constraint firstItem="gO8-yz-VnS" firstAttribute="top" secondItem="88a-aM-z3T" secondAttribute="bottom" constant="189" id="0WJ-77-vh3">
+                                <variation key="heightClass=compact" constant="130"/>
+                            </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EsU-S6-ePZ" secondAttribute="bottom" constant="64" id="1Q0-B1-LzK"/>
                             <constraint firstItem="EsU-S6-ePZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="39" id="BPt-K8-RlY"/>
                             <constraint firstAttribute="trailing" secondItem="jlh-at-wde" secondAttribute="trailing" id="BrJ-uF-ddS"/>
@@ -108,6 +128,9 @@
                             <constraint firstItem="fYz-Zv-93v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Dcc-2N-Si5"/>
                             <constraint firstItem="gO8-yz-VnS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JNe-30-Eoe"/>
                             <constraint firstItem="zxY-qh-jrX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OXy-8u-ANK"/>
+                            <constraint firstItem="88a-aM-z3T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PUo-R7-QxO">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="pNe-cp-elR" firstAttribute="centerY" secondItem="fYz-Zv-93v" secondAttribute="centerY" id="R45-0A-ZJv"/>
                             <constraint firstItem="jlh-at-wde" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WaN-l6-l3F"/>
                             <constraint firstItem="fYz-Zv-93v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XHC-g4-2hi"/>
@@ -154,6 +177,7 @@
                         <outlet property="penalty1Img" destination="hda-Bt-6sp" id="bm7-ht-y2Q"/>
                         <outlet property="penalty2Img" destination="fi4-93-3CO" id="634-yK-vZr"/>
                         <outlet property="penalty3Img" destination="Mgx-Zs-ONO" id="8fb-6W-cgM"/>
+                        <outlet property="restartBtn" destination="88a-aM-z3T" id="DXb-KE-lCN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

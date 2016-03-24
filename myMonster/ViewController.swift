@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
+    @IBOutlet weak var restartBtn: UIButton!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -101,6 +102,7 @@ class ViewController: UIViewController {
     
     func changeGameState() {
         
+        var rand = arc4random_uniform(2)
         
         if !monsterHappy{
             penalties += 1
@@ -114,6 +116,7 @@ class ViewController: UIViewController {
                 penalty3Img.alpha = DIM_ALPHA
             } else if penalties >= 3 {
                 penalty3Img.alpha = OPAQUE
+                rand = UInt32(2);
             } else {
                 penalty1Img.alpha = DIM_ALPHA
                 penalty2Img.alpha = DIM_ALPHA
@@ -125,7 +128,6 @@ class ViewController: UIViewController {
             }
         }
         
-        let rand = arc4random_uniform(2)
         
         if rand == 0 {
             foodImg.alpha = DIM_ALPHA
@@ -133,12 +135,17 @@ class ViewController: UIViewController {
             
             heartImg.alpha = OPAQUE
             heartImg.userInteractionEnabled = true
-        } else {
+        } else if rand == 1 {
             heartImg.alpha = DIM_ALPHA
             heartImg.userInteractionEnabled = false
             
             foodImg.alpha = OPAQUE
             foodImg.userInteractionEnabled = true
+        } else {
+            heartImg.alpha = DIM_ALPHA
+            foodImg.alpha  = DIM_ALPHA
+            heartImg.userInteractionEnabled = false
+            foodImg.userInteractionEnabled = false
         }
         
         currentItem = rand
@@ -150,7 +157,25 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
+        restartBtn.hidden = false
+    }
+    
+    func restartGame() {
+        penalty1Img.alpha = DIM_ALPHA
+        penalty2Img.alpha = DIM_ALPHA
+        penalty3Img.alpha = DIM_ALPHA
+        heartImg.alpha = OPAQUE
+        heartImg.userInteractionEnabled = true
+        startTimer()
+        penalties = 0
+        currentItem = 0
+        restartBtn.hidden = true
+        monsterImg.playIdleAnimation()
     }
 
+    @IBAction func onRestartTapped(sender: AnyObject) {
+        restartGame()
+    }
+    
 }
 
