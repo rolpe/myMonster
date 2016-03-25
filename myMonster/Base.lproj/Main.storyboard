@@ -121,6 +121,20 @@
                                     <action selector="onRestartTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PfN-Va-bYP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8D-va-h6E">
+                                <rect key="frame" x="226" y="241" width="148" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="aCC-xi-Hku"/>
+                                    <constraint firstAttribute="width" constant="148" id="be4-vy-1Gj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="36"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStartTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1HK-Ms-uvQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -144,9 +158,11 @@
                             <constraint firstItem="zxY-qh-jrX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZIC-Ds-gzN"/>
                             <constraint firstItem="zxY-qh-jrX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aD0-A6-1rt"/>
                             <constraint firstItem="jlh-at-wde" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bh0-2U-HLf"/>
+                            <constraint firstItem="s8D-va-h6E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dXQ-4O-dUF"/>
                             <constraint firstItem="EsU-S6-ePZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="62" id="dre-lI-FAV"/>
                             <constraint firstItem="zxY-qh-jrX" firstAttribute="top" secondItem="fYz-Zv-93v" secondAttribute="bottom" constant="15" id="hTi-dS-TX7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jlh-at-wde" secondAttribute="bottom" id="kUb-0A-3E8"/>
+                            <constraint firstItem="gO8-yz-VnS" firstAttribute="top" secondItem="s8D-va-h6E" secondAttribute="bottom" constant="189" id="kjc-r4-9x3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gO8-yz-VnS" secondAttribute="bottom" id="m5f-I0-3jm"/>
                             <constraint firstItem="zxY-qh-jrX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oqt-8Y-YlP"/>
                             <constraint firstItem="zxY-qh-jrX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r57-fH-3Dd"/>
@@ -186,6 +202,7 @@
                         <outlet property="penalty2Img" destination="fi4-93-3CO" id="634-yK-vZr"/>
                         <outlet property="penalty3Img" destination="Mgx-Zs-ONO" id="8fb-6W-cgM"/>
                         <outlet property="restartBtn" destination="88a-aM-z3T" id="DXb-KE-lCN"/>
+                        <outlet property="startBtn" destination="s8D-va-h6E" id="Lro-kH-pzl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

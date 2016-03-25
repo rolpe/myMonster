@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
     @IBOutlet weak var restartBtn: UIButton!
+    @IBOutlet weak var startBtn: UIButton!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -78,7 +79,6 @@ class ViewController: UIViewController {
             print(err.debugDescription)
         }
         
-        startTimer()
     }
     
     func itemDroppedOnCharacter(notif: AnyObject) {
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         }
         
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
     }
     
     func changeGameState() {
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
                 penalty3Img.alpha = DIM_ALPHA
             } else if penalties >= 3 {
                 penalty3Img.alpha = OPAQUE
-                rand = UInt32(2);
+                rand = UInt32(3);
             } else {
                 penalty1Img.alpha = DIM_ALPHA
                 penalty2Img.alpha = DIM_ALPHA
@@ -160,6 +160,13 @@ class ViewController: UIViewController {
             foodImg.userInteractionEnabled = false
             dumbellImg.alpha = OPAQUE
             dumbellImg.userInteractionEnabled = true
+        } else {
+            heartImg.alpha = DIM_ALPHA
+            heartImg.userInteractionEnabled =  false
+            foodImg.alpha  = DIM_ALPHA
+            foodImg.userInteractionEnabled = false
+            dumbellImg.alpha = DIM_ALPHA
+            dumbellImg.userInteractionEnabled = false
         }
         
         currentItem = rand
@@ -189,6 +196,13 @@ class ViewController: UIViewController {
         
     }
 
+
+    @IBAction func onStartTapped(sender: AnyObject) {
+        startTimer()
+        startBtn.hidden = true
+        startBtn.userInteractionEnabled = false
+    }
+    
     @IBAction func onRestartTapped(sender: AnyObject) {
         restartGame()
     }
