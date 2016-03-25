@@ -55,5 +55,22 @@ class MonsterImg: UIImageView {
         self.startAnimating()
     }
     
+    func playRestartAnimation() {
+        self.image = UIImage(named: "dead1.png")
+        
+        self.animationImages = nil
+        
+        var imgArray = [UIImage] ()
+        for x in (1...5).reverse() {
+            let img = UIImage(named: "dead\(x).png")
+            imgArray.append(img!)
+        }
+        
+        self.animationImages = imgArray
+        self.animationDuration = 0.8
+        self.animationRepeatCount = 1
+        self.startAnimating()
+        
+    }
     
 }

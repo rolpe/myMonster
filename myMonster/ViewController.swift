@@ -184,7 +184,9 @@ class ViewController: UIViewController {
         penalties = 0
         currentItem = 0
         restartBtn.hidden = true
-        monsterImg.playIdleAnimation()
+        monsterImg.playRestartAnimation()
+        NSTimer.scheduledTimerWithTimeInterval(0.9, target: monsterImg, selector: Selector("playIdleAnimation"), userInfo: nil, repeats: false)
+        
     }
 
     @IBAction func onRestartTapped(sender: AnyObject) {
