@@ -19,6 +19,7 @@
 		694E11BA1C99D8FB00B9635B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 694E11B91C99D8FB00B9635B /* Assets.xcassets */; };
 		694E11BD1C99D8FB00B9635B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694E11BB1C99D8FB00B9635B /* LaunchScreen.storyboard */; };
 		694E11C51C99E16200B9635B /* DragImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694E11C41C99E16200B9635B /* DragImg.swift */; };
+		69ACB6431CA5A7740086DD4E /* roar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69ACB6421CA5A7740086DD4E /* roar.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		694E11BC1C99D8FB00B9635B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		694E11BE1C99D8FB00B9635B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		694E11C41C99E16200B9635B /* DragImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImg.swift; sourceTree = "<group>"; };
+		69ACB6421CA5A7740086DD4E /* roar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = roar.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				690E42EB1CA321B700189326 /* heart.wav */,
 				690E42EC1CA321B700189326 /* skull.wav */,
 				690E42F11CA321BE00189326 /* cave-music.mp3 */,
+				69ACB6421CA5A7740086DD4E /* roar.mp3 */,
 				694E11B21C99D8FB00B9635B /* AppDelegate.swift */,
 				694E11B41C99D8FB00B9635B /* ViewController.swift */,
 				694E11B61C99D8FB00B9635B /* Main.storyboard */,
@@ -150,6 +153,7 @@
 				690E42F01CA321B700189326 /* skull.wav in Resources */,
 				690E42ED1CA321B700189326 /* bite.wav in Resources */,
 				694E11BD1C99D8FB00B9635B /* LaunchScreen.storyboard in Resources */,
+				69ACB6431CA5A7740086DD4E /* roar.mp3 in Resources */,
 				694E11BA1C99D8FB00B9635B /* Assets.xcassets in Resources */,
 				694E11B81C99D8FB00B9635B /* Main.storyboard in Resources */,
 			);

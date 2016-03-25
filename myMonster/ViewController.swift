@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var monsterImg: MonsterImg!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
+    @IBOutlet weak var dumbellImg: DragImg!
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
@@ -35,14 +36,18 @@ class ViewController: UIViewController {
     var sfxHeart: AVAudioPlayer!
     var sfxDeath: AVAudioPlayer!
     var sfxSkull: AVAudioPlayer!
+    var sfxRoar: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
+        dumbellImg.dropTarget = monsterImg
         foodImg.alpha = DIM_ALPHA
         foodImg.userInteractionEnabled = false
+        dumbellImg.alpha = DIM_ALPHA
+        dumbellImg.userInteractionEnabled = false
         
         penalty1Img.alpha = DIM_ALPHA
         penalty2Img.alpha = DIM_ALPHA
@@ -58,6 +63,7 @@ class ViewController: UIViewController {
             try sfxHeart = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
             try sfxDeath = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("death", ofType: "wav")!))
             try sfxSkull = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
+            try sfxRoar = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("roar", ofType: "mp3")!))
             
             musicPlayer.prepareToPlay()
             musicPlayer.play()
@@ -66,6 +72,7 @@ class ViewController: UIViewController {
             sfxHeart.prepareToPlay()
             sfxDeath.prepareToPlay()
             sfxSkull.prepareToPlay()
+            sfxRoar.prepareToPlay()
             
         } catch let err as NSError {
             print(err.debugDescription)
@@ -78,7 +85,8 @@ class ViewController: UIViewController {
         monsterHappy = true
         startTimer()
         
-        
+        dumbellImg.alpha = DIM_ALPHA
+        dumbellImg.userInteractionEnabled = false
         foodImg.alpha = DIM_ALPHA
         foodImg.userInteractionEnabled = false
         heartImg.alpha = DIM_ALPHA
@@ -86,8 +94,10 @@ class ViewController: UIViewController {
         
         if currentItem == 0 {
             sfxHeart.play()
-        } else {
+        } else if currentItem == 1 {
             sfxBite.play()
+        } else {
+            sfxRoar.play()
         }
     }
 
@@ -102,7 +112,7 @@ class ViewController: UIViewController {
     
     func changeGameState() {
         
-        var rand = arc4random_uniform(2)
+        var rand = arc4random_uniform(3)
         
         if !monsterHappy{
             penalties += 1
@@ -132,20 +142,24 @@ class ViewController: UIViewController {
         if rand == 0 {
             foodImg.alpha = DIM_ALPHA
             foodImg.userInteractionEnabled = false
-            
+            dumbellImg.alpha = DIM_ALPHA
+            dumbellImg.userInteractionEnabled = false
             heartImg.alpha = OPAQUE
             heartImg.userInteractionEnabled = true
         } else if rand == 1 {
             heartImg.alpha = DIM_ALPHA
             heartImg.userInteractionEnabled = false
-            
+            dumbellImg.alpha = DIM_ALPHA
+            dumbellImg.userInteractionEnabled = false
             foodImg.alpha = OPAQUE
             foodImg.userInteractionEnabled = true
-        } else {
+        } else if rand == 2 {
             heartImg.alpha = DIM_ALPHA
             foodImg.alpha  = DIM_ALPHA
             heartImg.userInteractionEnabled = false
             foodImg.userInteractionEnabled = false
+            dumbellImg.alpha = OPAQUE
+            dumbellImg.userInteractionEnabled = true
         }
         
         currentItem = rand

@@ -73,14 +73,21 @@
                                     <rect key="frame" x="206" y="-59" width="182" height="50"/>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="zxY-qh-jrX">
-                                <rect key="frame" x="155" y="120" width="290" height="98"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="zxY-qh-jrX">
+                                <rect key="frame" x="134" y="120" width="332" height="108"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="vvg-we-LVg" customClass="DragImg" customModule="myMonster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="98"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="108"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dumbbell" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-uv-8ER" customClass="DragImg" customModule="myMonster" customModuleProvider="target">
+                                        <rect key="frame" x="52" y="0.0" width="220" height="108"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="108" id="JNt-DX-6Zb"/>
+                                            <constraint firstAttribute="width" constant="220" id="dhy-nj-Crt"/>
+                                        </constraints>
                                     </imageView>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="Azv-YC-qpB" customClass="DragImg" customModule="myMonster" customModuleProvider="target">
-                                        <rect key="frame" x="195" y="0.0" width="95" height="98"/>
+                                        <rect key="frame" x="242" y="0.0" width="90" height="108"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -93,8 +100,8 @@
                                         <exclude reference="gqc-GC-uCx"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact" axis="vertical" misplaced="YES" spacing="20">
-                                    <rect key="frame" x="485" y="28" width="96" height="216"/>
+                                <variation key="heightClass=compact" axis="vertical" distribution="fill" misplaced="YES" spacing="-12">
+                                    <rect key="frame" x="485" y="28" width="96" height="280"/>
                                     <mask key="constraints">
                                         <include reference="gqc-GC-uCx"/>
                                     </mask>
@@ -119,7 +126,7 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EsU-S6-ePZ" secondAttribute="bottom" constant="58" id="0Ea-uU-Yy4"/>
                             <constraint firstItem="gO8-yz-VnS" firstAttribute="top" secondItem="88a-aM-z3T" secondAttribute="bottom" constant="189" id="0WJ-77-vh3">
-                                <variation key="heightClass=compact" constant="130"/>
+                                <variation key="heightClass=compact" constant="80"/>
                             </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EsU-S6-ePZ" secondAttribute="bottom" constant="64" id="1Q0-B1-LzK"/>
                             <constraint firstItem="EsU-S6-ePZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="39" id="BPt-K8-RlY"/>
@@ -171,6 +178,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="dumbellImg" destination="VMJ-uv-8ER" id="6PV-xb-2Pm"/>
                         <outlet property="foodImg" destination="Azv-YC-qpB" id="KXs-yN-KZv"/>
                         <outlet property="heartImg" destination="vvg-we-LVg" id="Db7-PA-Rtt"/>
                         <outlet property="monsterImg" destination="EsU-S6-ePZ" id="1KJ-Ix-yQJ"/>
@@ -187,6 +195,7 @@
     </scenes>
     <resources>
         <image name="bg" width="768" height="1024"/>
+        <image name="dumbbell" width="256" height="256"/>
         <image name="food" width="95" height="98"/>
         <image name="ground" width="1444" height="151"/>
         <image name="heart" width="95" height="98"/>
